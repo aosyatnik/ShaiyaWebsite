@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UsersMasterModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="UsersMasterModelStoreContainer">
+          <EntitySet Name="Users_Master" EntityType="UsersMasterModel.Store.Users_Master" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Users_Master">
+          <Key>
+            <PropertyRef Name="UserUID" />
+          </Key>
+          <Property Name="RowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserUID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="18" />
+          <Property Name="Pw" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="JoinDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="Admin" Type="bit" Nullable="false" />
+          <Property Name="AdminLevel" Type="tinyint" Nullable="false" />
+          <Property Name="UseQueue" Type="bit" Nullable="false" />
+          <Property Name="Status" Type="smallint" Nullable="false" />
+          <Property Name="Leave" Type="tinyint" Nullable="false" />
+          <Property Name="LeaveDate" Type="smalldatetime" />
+          <Property Name="UserType" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UserIp" Type="varchar" MaxLength="15" />
+          <Property Name="ModiIp" Type="varchar" MaxLength="15" />
+          <Property Name="ModiDate" Type="datetime" />
+          <Property Name="Point" Type="int" Nullable="false" />
+          <Property Name="Enpassword" Type="char" MaxLength="32" />
+          <Property Name="Birth" Type="varchar" MaxLength="8" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UsersMasterModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ShaiyaContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Users_Master" EntityType="UsersMasterModel.Users_Master" />
+        </EntityContainer>
+        <EntityType Name="Users_Master">
+          <Key>
+            <PropertyRef Name="RowID" />
+          </Key>
+          <Property Name="RowID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserUID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="18" Unicode="false" FixedLength="false" />
+          <Property Name="Pw" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Admin" Type="Boolean" Nullable="false" />
+          <Property Name="AdminLevel" Type="Byte" Nullable="false" />
+          <Property Name="UseQueue" Type="Boolean" Nullable="false" />
+          <Property Name="Status" Type="Int16" Nullable="false" />
+          <Property Name="Leave" Type="Byte" Nullable="false" />
+          <Property Name="LeaveDate" Type="DateTime" Precision="0" />
+          <Property Name="UserType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UserIp" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="ModiIp" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="ModiDate" Type="DateTime" Precision="3" />
+          <Property Name="Point" Type="Int32" Nullable="false" />
+          <Property Name="Enpassword" Type="String" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="Birth" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UsersMasterModelStoreContainer" CdmEntityContainer="ShaiyaContext">
+          <EntitySetMapping Name="Users_Master">
+            <EntityTypeMapping TypeName="UsersMasterModel.Users_Master">
+              <MappingFragment StoreEntitySet="Users_Master">
+                <ScalarProperty Name="RowID" ColumnName="RowID" />
+                <ScalarProperty Name="UserUID" ColumnName="UserUID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Pw" ColumnName="Pw" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+                <ScalarProperty Name="AdminLevel" ColumnName="AdminLevel" />
+                <ScalarProperty Name="UseQueue" ColumnName="UseQueue" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Leave" ColumnName="Leave" />
+                <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="UserIp" ColumnName="UserIp" />
+                <ScalarProperty Name="ModiIp" ColumnName="ModiIp" />
+                <ScalarProperty Name="ModiDate" ColumnName="ModiDate" />
+                <ScalarProperty Name="Point" ColumnName="Point" />
+                <ScalarProperty Name="Enpassword" ColumnName="Enpassword" />
+                <ScalarProperty Name="Birth" ColumnName="Birth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

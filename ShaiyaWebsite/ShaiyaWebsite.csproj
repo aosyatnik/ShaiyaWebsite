@@ -49,7 +49,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -139,6 +142,24 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Users_Master.cs">
+      <DependentUpon>User_Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Master.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User_Master.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Master.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User_Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User_Master.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +207,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\User_Master.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>User_Master.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\User_Master.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>User_Master.edmx</DependentUpon>
+      <LastGenOutput>User_Master.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\User_Master.edmx.diagram">
+      <DependentUpon>User_Master.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\User_Master.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>User_Master.edmx</DependentUpon>
+      <LastGenOutput>User_Master.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
