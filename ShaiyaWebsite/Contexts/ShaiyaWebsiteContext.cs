@@ -24,7 +24,7 @@ namespace ShaiyaWebsite.Contexts
 
             if (result > 0)
             {
-                // Don"t forget to save user for website to game db.
+                // Dont forget to save user from website to game db.
                 var addedUsers = ChangeTracker.Entries()
                                     .Where(dbEntry => dbEntry.Entity is User)
                                     .Select(dbEntry => dbEntry.Entity as User);
