@@ -121,6 +121,7 @@
     <Compile Include="Contexts\ShaiyaWebsiteContext.cs" />
     <Compile Include="Controllers\AddsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,9 +178,7 @@
     </Content>
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -231,11 +230,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Shaiya\UpdateVersion.ini" />
+    <Content Include="App_Data\CONFIG.INI" />
     <None Include="Properties\PublishProfiles\shaiya - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\shaiya - Web Deploy.pubxml" />
     <Content Include="Views\Adds\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Notice\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
