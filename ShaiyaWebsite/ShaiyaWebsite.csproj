@@ -229,6 +229,10 @@
       <LastGenOutput>User_Master.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\shaiya - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\shaiya - Web Deploy.pubxml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -245,7 +249,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>8924</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:1709/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
