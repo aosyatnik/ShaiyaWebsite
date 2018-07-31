@@ -13,6 +13,26 @@ namespace ShaiyaWebsite
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.RouteExistingFiles = true;
+
+            routes.MapRoute(
+               name: "Config",
+               url: "{config}.ini",
+               defaults: new { controller = "Site", action = "Config" }
+            );
+
+            routes.MapRoute(
+                name: "UpdateVersionRoute",
+                url: "Shaiya/UpdateVersion.ini",
+                defaults: new { controller = "Site", action = "UpdateVersion" }
+            );
+
+            routes.MapRoute(
+                name: "PatchRoute",
+                url: "Shaiya/patch/{file}.patch",
+                defaults: new { controller = "Site", action = "Patch" }
+            );
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
@@ -21,11 +41,7 @@ namespace ShaiyaWebsite
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
-            var shaiyaFolder = HostingEnvironment.MapPath("~/App_Data/Shaiya");
-            if (!Directory.Exists(shaiyaFolder))
-            {
-                Directory.CreateDirectory(shaiyaFolder);
-            }
+
         }
     }
 }
